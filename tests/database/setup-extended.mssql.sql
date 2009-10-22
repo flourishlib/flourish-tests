@@ -22,7 +22,7 @@ CREATE TABLE favorite_albums (
 );
 
 CREATE TABLE top_albums (
-	top_album_id INTEGER PRIMARY KEY AUTOINCREMENT,
+	top_album_id INTEGER IDENTITY(1,1) PRIMARY KEY,
 	album_id INTEGER NOT NULL UNIQUE REFERENCES albums(album_id) ON DELETE CASCADE,
 	position INTEGER NOT NULL UNIQUE
 );
@@ -32,13 +32,13 @@ CREATE TABLE invalid_tables (
 );
 
 CREATE TABLE events (
-	event_id INTEGER PRIMARY KEY AUTOINCREMENT,
+	event_id INTEGER IDENTITY(1,1) PRIMARY KEY,
 	title VARCHAR(255) NOT NULL,
-	start_date DATE NOT NULL,
-	end_date DATE
+	start_date DATETIME NOT NULL,
+	end_date DATETIME NULL
 );
 
-BEGIN;
+BEGIN TRANSACTION;
 
 INSERT INTO user_details (user_id, photo) VALUES (1, 'will.png');
 INSERT INTO user_details (user_id, photo) VALUES (2, 'john.jpg');
@@ -72,7 +72,7 @@ INSERT INTO events (title, start_date, end_date) VALUES ('Fourth Event',  '2009-
 INSERT INTO events (title, start_date, end_date) VALUES ('Fifth Event',   '2005-06-03', '2008-06-02');
 INSERT INTO events (title, start_date, end_date) VALUES ('Sixth Event',   '2009-05-29', '2009-05-30');
 INSERT INTO events (title, start_date, end_date) VALUES ('Seventh Event', '2008-01-02', '2008-01-03');
-INSERT INTO events (title, start_date, end_date) VALUES ('Eight Event',   '2008-01-01', NULL);
+INSERT INTO events (title, start_date, end_date) VALUES ('Eighth Event',  '2008-01-01', NULL);
 INSERT INTO events (title, start_date, end_date) VALUES ('Ninth Event',   '2008-02-02', NULL); 
 
 INSERT INTO top_albums (album_id, position) VALUES (1, 1);

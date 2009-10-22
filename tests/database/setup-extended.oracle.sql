@@ -1,6 +1,6 @@
 CREATE TABLE user_details (
 	user_id INTEGER PRIMARY KEY REFERENCES users(user_id) ON DELETE CASCADE,
-	photo VARCHAR(255) NOT NULL DEFAULT ''
+	photo VARCHAR(255)
 );
 
 CREATE TABLE record_labels (
@@ -8,13 +8,13 @@ CREATE TABLE record_labels (
 );
 
 CREATE TABLE record_deals (
-	record_label VARCHAR(255) NOT NULL REFERENCES record_labels(name) ON UPDATE CASCADE ON DELETE CASCADE,
+	record_label VARCHAR(255) NOT NULL REFERENCES record_labels(name) ON DELETE CASCADE,
 	artist_id INTEGER NOT NULL REFERENCES artists(artist_id) ON DELETE CASCADE,
 	PRIMARY KEY (record_label, artist_id)
 );
 
 CREATE TABLE favorite_albums (
-	email VARCHAR(200) NOT NULL REFERENCES users(email_address) ON UPDATE CASCADE ON DELETE CASCADE,
+	email VARCHAR(200) NOT NULL REFERENCES users(email_address) ON DELETE CASCADE,
 	album_id INTEGER NOT NULL REFERENCES albums(album_id) ON DELETE CASCADE,
 	position INTEGER NOT NULL,
 	UNIQUE (email, position),
@@ -22,21 +22,45 @@ CREATE TABLE favorite_albums (
 );
 
 CREATE TABLE top_albums (
-	top_album_id INTEGER PRIMARY KEY AUTOINCREMENT,
+	top_album_id INTEGER PRIMARY KEY,
 	album_id INTEGER NOT NULL UNIQUE REFERENCES albums(album_id) ON DELETE CASCADE,
 	position INTEGER NOT NULL UNIQUE
 );
+
+CREATE SEQUENCE top_albums_top_album_id_seq;
+
+CREATE OR REPLACE TRIGGER top_albums_top_album_id_trg
+BEFORE INSERT ON top_albums
+FOR EACH ROW
+BEGIN
+  IF :new.top_album_id IS NULL THEN
+	SELECT top_albums_top_album_id_seq.nextval INTO :new.top_album_id FROM dual\;
+  END IF\;
+END\;
+;
 
 CREATE TABLE invalid_tables (
 	not_primary_key VARCHAR(200)
 );
 
 CREATE TABLE events (
-	event_id INTEGER PRIMARY KEY AUTOINCREMENT,
+	event_id INTEGER PRIMARY KEY,
 	title VARCHAR(255) NOT NULL,
 	start_date DATE NOT NULL,
 	end_date DATE
 );
+
+CREATE SEQUENCE events_event_id_seq;
+
+CREATE OR REPLACE TRIGGER events_event_id_trg
+BEFORE INSERT ON events
+FOR EACH ROW
+BEGIN
+  IF :new.event_id IS NULL THEN
+	SELECT events_event_id_seq.nextval INTO :new.event_id FROM dual\;
+  END IF\;
+END\;
+;
 
 BEGIN;
 

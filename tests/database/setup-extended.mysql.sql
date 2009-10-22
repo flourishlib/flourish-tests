@@ -1,42 +1,46 @@
 CREATE TABLE user_details (
-	user_id INTEGER PRIMARY KEY REFERENCES users(user_id) ON DELETE CASCADE,
-	photo VARCHAR(255) NOT NULL DEFAULT ''
-);
+	user_id INTEGER PRIMARY KEY,
+	photo VARCHAR(255) NOT NULL DEFAULT '',
+	FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+)ENGINE=InnoDB;
 
 CREATE TABLE record_labels (
 	name VARCHAR(255) PRIMARY KEY
-);
+)ENGINE=InnoDB;
 
 CREATE TABLE record_deals (
-	record_label VARCHAR(255) NOT NULL REFERENCES record_labels(name) ON UPDATE CASCADE ON DELETE CASCADE,
+	record_label VARCHAR(255) NOT NULL,
 	artist_id INTEGER NOT NULL REFERENCES artists(artist_id) ON DELETE CASCADE,
+	FOREIGN KEY (record_label)  REFERENCES record_labels(name) ON UPDATE CASCADE ON DELETE CASCADE,
 	PRIMARY KEY (record_label, artist_id)
-);
+)ENGINE=InnoDB;
 
 CREATE TABLE favorite_albums (
-	email VARCHAR(200) NOT NULL REFERENCES users(email_address) ON UPDATE CASCADE ON DELETE CASCADE,
+	email VARCHAR(200) NOT NULL,
 	album_id INTEGER NOT NULL REFERENCES albums(album_id) ON DELETE CASCADE,
 	position INTEGER NOT NULL,
 	UNIQUE (email, position),
+	FOREIGN KEY (email) REFERENCES users(email_address) ON UPDATE CASCADE ON DELETE CASCADE,
 	PRIMARY KEY (email, album_id)
-);
+)ENGINE=InnoDB;
 
 CREATE TABLE top_albums (
-	top_album_id INTEGER PRIMARY KEY AUTOINCREMENT,
-	album_id INTEGER NOT NULL UNIQUE REFERENCES albums(album_id) ON DELETE CASCADE,
-	position INTEGER NOT NULL UNIQUE
-);
+	top_album_id INTEGER PRIMARY KEY AUTO_INCREMENT,
+	album_id INTEGER NOT NULL UNIQUE,
+	position INTEGER NOT NULL UNIQUE,
+	FOREIGN KEY (album_id) REFERENCES albums(album_id) ON DELETE CASCADE
+)ENGINE=InnoDB;
 
 CREATE TABLE invalid_tables (
 	not_primary_key VARCHAR(200)
-);
+)ENGINE=InnoDB;
 
 CREATE TABLE events (
-	event_id INTEGER PRIMARY KEY AUTOINCREMENT,
+	event_id INTEGER PRIMARY KEY AUTO_INCREMENT,
 	title VARCHAR(255) NOT NULL,
 	start_date DATE NOT NULL,
 	end_date DATE
-);
+)ENGINE=InnoDB;
 
 BEGIN;
 

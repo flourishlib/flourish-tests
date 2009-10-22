@@ -22,7 +22,7 @@ CREATE TABLE favorite_albums (
 );
 
 CREATE TABLE top_albums (
-	top_album_id INTEGER PRIMARY KEY AUTOINCREMENT,
+	top_album_id SERIAL PRIMARY KEY,
 	album_id INTEGER NOT NULL UNIQUE REFERENCES albums(album_id) ON DELETE CASCADE,
 	position INTEGER NOT NULL UNIQUE
 );
@@ -32,7 +32,7 @@ CREATE TABLE invalid_tables (
 );
 
 CREATE TABLE events (
-	event_id INTEGER PRIMARY KEY AUTOINCREMENT,
+	event_id SERIAL PRIMARY KEY,
 	title VARCHAR(255) NOT NULL,
 	start_date DATE NOT NULL,
 	end_date DATE
