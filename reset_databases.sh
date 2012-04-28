@@ -85,17 +85,17 @@ if [ "$TYPE" = "" ] || [ "$TYPE" = "oracle" ]; then
 fi
 
 if [ "$TYPE" = "" ] || [ "$TYPE" = "mssql" ]; then
-	sqsh -U flourish -P "password" -S win-db.flourishlib.com:1122 -D $DB -L semicolon_hack=1 -i database/teardown-extended.mssql.sql > /dev/null
-	sqsh -U flourish -P "password" -S win-db.flourishlib.com:1122 -D $DB -L semicolon_hack=1 -i database/teardown-alternate_schema.mssql.sql > /dev/null
-	sqsh -U flourish -P "password" -S win-db.flourishlib.com:1122 -D $DB -L semicolon_hack=1 -i database/teardown.mssql.sql > /dev/null
+	sqsh -U flourish -P "password" -S win-db.flourishlib.com:1122 -D $DB -L semicolon_hack=1 -i database/teardown-extended.mssql.sql > /dev/null 2> /dev/null
+	sqsh -U flourish -P "password" -S win-db.flourishlib.com:1122 -D $DB -L semicolon_hack=1 -i database/teardown-alternate_schema.mssql.sql > /dev/null 2> /dev/null
+	sqsh -U flourish -P "password" -S win-db.flourishlib.com:1122 -D $DB -L semicolon_hack=1 -i database/teardown.mssql.sql > /dev/null 2> /dev/null
 
 	if [[ $(uname -o) == Cygwin ]]; then
-		sed -r -i -e "s/(CREATE SCHEMA \w+;)/\1\nGO/g" database/setup-alternate_schema.mssql.sql
+		sed -r -i -e "s/(CREATE SCHEMA \w+;)/\1\nGO/g" database/setup-alternate_schema.mssql.sql > /dev/null 2> /dev/null
 	fi
 
-	sqsh -U flourish -P "password" -S win-db.flourishlib.com:1122 -D $DB -L semicolon_hack=1 -i database/setup.mssql.sql > /dev/null
-	sqsh -U flourish -P "password" -S win-db.flourishlib.com:1122 -D $DB -L semicolon_hack=1 -i database/setup-alternate_schema.mssql.sql > /dev/null
-	sqsh -U flourish -P "password" -S win-db.flourishlib.com:1122 -D $DB -L semicolon_hack=1 -i database/setup-extended.mssql.sql > /dev/null
+	sqsh -U flourish -P "password" -S win-db.flourishlib.com:1122 -D $DB -L semicolon_hack=1 -i database/setup.mssql.sql > /dev/null 2> /dev/null
+	sqsh -U flourish -P "password" -S win-db.flourishlib.com:1122 -D $DB -L semicolon_hack=1 -i database/setup-alternate_schema.mssql.sql > /dev/null 2> /dev/null
+	sqsh -U flourish -P "password" -S win-db.flourishlib.com:1122 -D $DB -L semicolon_hack=1 -i database/setup-extended.mssql.sql > /dev/null 2> /dev/null
 fi
 
 if [ "$TYPE" = "" ] || [ "$TYPE" = "mssql2008" ]; then
