@@ -505,7 +505,7 @@ for RHOST in $RHOSTS; do
 	
 	
 	if (( $CONCURRENT == 1 )); then
-		TOKEN=$(wget -O - -o /dev/null http://flourishlib.com/test_token.php?action=obtain)
+		TOKEN=1
 		
 		start_activity "[ Pushing to $RHOST"
 		
@@ -617,8 +617,6 @@ for RHOST in $RHOSTS; do
 		fi
 
 		stop_activity
-
-		wget -O - -o /dev/null http://flourishlib.com/test_token.php?action=release\&token=$TOKEN
 	
 	else
 		while (( $(jobs -pr | wc -l) >= $CONCURRENT )); do
