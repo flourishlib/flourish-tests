@@ -36,11 +36,11 @@ if [ "$TYPE" = "" ] || [ "$TYPE" = "db2" ]; then
 fi
 
 if [ "$TYPE" = "" ] || [ "$TYPE" = "mysql" ]; then
-	mysql -h db.flourishlib.com -u flourish --password=password $DB < database/teardown-extended.mysql.sql
-	mysql -h db.flourishlib.com -u flourish --password=password $DB < database/teardown.mysql.sql
+	mysql -h db.flourishlib.com -u flourish --password=password $DB < database/teardown-extended.mysql.sql > /dev/null 2> /dev/null
+	mysql -h db.flourishlib.com -u flourish --password=password $DB < database/teardown.mysql.sql > /dev/null 2> /dev/null
 
-	mysql -h db.flourishlib.com -u flourish --password=password $DB < database/setup.mysql.sql
-	mysql -h db.flourishlib.com -u flourish --password=password $DB < database/setup-extended.mysql.sql
+	mysql -h db.flourishlib.com -u flourish --password=password $DB < database/setup.mysql.sql > /dev/null 2> /dev/null
+	mysql -h db.flourishlib.com -u flourish --password=password $DB < database/setup-extended.mysql.sql > /dev/null 2> /dev/null
 fi
 
 if [ "$TYPE" = "" ] || [ "$TYPE" = "pgsql" ]; then
