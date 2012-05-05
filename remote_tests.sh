@@ -539,7 +539,8 @@ for RHOST in $RHOSTS; do
 		queue_command mkdir flourish_$TOKEN
 		queue_command mv flourish_$TOKEN.tar.gz flourish_$TOKEN/
 		queue_command cd flourish_$TOKEN
-		queue_command tar xzf flourish_$TOKEN.tar.gz \2\> /dev/null
+		queue_command gunzip flourish_$TOKEN.tar.gz
+		queue_command tar xf flourish_$TOKEN.tar \2\> /dev/null
 		
 		if (( $SUB_CALL || $JSON || $TEXT )); then
 			exec_commands $RHOST OUTPUT
