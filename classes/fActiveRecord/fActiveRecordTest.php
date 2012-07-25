@@ -27,6 +27,10 @@ class InvalidTable extends fActiveRecord { }
 function changed($object, &$values, &$old_values, &$related_records, &$cache, $method, $parameters) {
 	return fActiveRecord::changed($values, $old_values, $parameters[0]);	
 }
+
+function build($class, $method, $parameters) {
+	return 'built from buildAll';
+}
  
 class fActiveRecordTest extends PHPUnit_Framework_TestCase
 {
@@ -84,6 +88,7 @@ class fActiveRecordTest extends PHPUnit_Framework_TestCase
 			fORM::mapClassToTable('Album', 'records');
 		}
 		fORM::registerActiveRecordMethod('User', 'hasChanged', 'changed');	
+		fORM::registerActiveRecordStaticMethod('User', 'buildAll', 'build');
 	}
 	
 	public function tearDown()
@@ -369,7 +374,15 @@ class fActiveRecordTest extends PHPUnit_Framework_TestCase
 			self::$db->query('SELECT * FROM %r WHERE user_id = %i', fORM::tablize('User'), 1)->countReturnedRows()
 		);	
 	}
-	
+
+	public function testBuildAll()
+	{
+		$this->assertEquals(
+			'built from buildAll'
+			User::buildAll()
+		);
+	}
+
 	public function testChanged()
 	{
 		$user = $this->createUser();
