@@ -5,8 +5,7 @@ date_default_timezone_set('America/New_York');
 define('EMAIL_SERVER', 'mail.flourishlib.com');
 define('EMAIL_USER', 'tests');
 define('EMAIL_ADDRESS', 'tests@flourishlib.com');
-// The EMAIL_PASSWORD needs to be passed to the test runner as a
-// parameter in the form: =EMAIL_PASSWORD:password
+define('EMAIL_PASSWORD', 'flTestP455');
 
 // Delete any messages that shouldn't be there
 if (defined('EMAIL_PASSWORD')) {
