@@ -1,0 +1,118 @@
+Received: (qmail 3132 invoked from network); 28 Apr 2010 21:46:24 -0400
+Received: from c-24-61-155-58.hsd1.ma.comcast.net (HELO ?192.168.10.2?) (24.61.155.58)
+  by gallerytk.com with (DHE-RSA-AES256-SHA encrypted) SMTP; 28 Apr 2010 21:46:24 -0400
+Message-ID: <4BD8E4BF.4090207@flourishlib.com>
+Date: Wed, 28 Apr 2010 21:45:35 -0400
+From: Will Bond <tests@flourishlib.com>
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.9) Gecko/20100317 Thunderbird/3.0.4
+MIME-Version: 1.0
+To: flourishlib@aim.com
+CC: flourishlib@zoho.com, flourishlib@gmail.com, flourishlib@gmx.com, 
+ tests@flourishlib.com
+Subject: Re: Multiple To and Cc
+References: 268 <8CCB5542832A7C9-1F1C-35E4@webmail-d017.sysops.aol.com>
+In-Reply-To: <8CCB5542832A7C9-1F1C-35E4@webmail-d017.sysops.aol.com>
+Content-Type: multipart/alternative;
+ boundary="------------070405010504020009070409"
+
+This is a multi-part message in MIME format.
+--------------070405010504020009070409
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+This is a *fifth*, and final reply
+
+On 4/28/2010 9:41 PM, flourishlib@aim.com wrote:
+> This is a fourth level reply
+>
+> -----Original Message-----
+> From: flourishlib <flourishlib@zoho.com>
+> To: flourishlib <flourishlib@gmail.com>
+> Cc: tests <tests@flourishlib.com>; flourishlib <flourishlib@aim.com>; 
+> flourishlib <flourishlib@gmx.com>; flourishlib <flourishlib@zoho.com>
+> Sent: Wed, Apr 28, 2010 9:39 pm
+> Subject: Re: Multiple To and Cc
+>
+> This is a third-level reply
+>
+> ---- On Wed, 28 Apr 2010 18:30:01 -0700 *Will Bond 
+> <flourishlib@gmail.com <mailto:flourishlib@gmail.com>>* wrote ----
+>
+>     This is a test of replying to a message
+>
+>     On Wed, Apr 28, 2010 at 9:28 PM, Will Bond <will@flourishlib.com
+>     <mailto:will@flourishlib.com>> wrote:
+>
+>         This is a test of sending to multiple people, while also CCing
+>         another few
+>
+>
+>
+
+
+--------------070405010504020009070409
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="Content-Type">
+  <title></title>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+This is a <b>fifth</b>, and final reply<br>
+<br>
+On 4/28/2010 9:41 PM, <a class="moz-txt-link-abbreviated" href="mailto:flourishlib@aim.com">flourishlib@aim.com</a> wrote:
+<blockquote
+ cite="mid:8CCB5542832A7C9-1F1C-35E4@webmail-d017.sysops.aol.com"
+ type="cite"><font color="black" face="arial" size="2">
+  <div> <font size="2"><font face="Arial, Helvetica, sans-serif">This
+is a fourth level reply<br>
+  <br>
+  </font></font></div>
+  <div
+ style="font-family: arial,helvetica; font-size: 10pt; color: black;">-----Original
+Message-----<br>
+From: flourishlib <a class="moz-txt-link-rfc2396E" href="mailto:flourishlib@zoho.com">&lt;flourishlib@zoho.com&gt;</a><br>
+To: flourishlib <a class="moz-txt-link-rfc2396E" href="mailto:flourishlib@gmail.com">&lt;flourishlib@gmail.com&gt;</a><br>
+Cc: tests <a class="moz-txt-link-rfc2396E" href="mailto:tests@flourishlib.com">&lt;tests@flourishlib.com&gt;</a>; flourishlib
+<a class="moz-txt-link-rfc2396E" href="mailto:flourishlib@aim.com">&lt;flourishlib@aim.com&gt;</a>; flourishlib <a class="moz-txt-link-rfc2396E" href="mailto:flourishlib@gmx.com">&lt;flourishlib@gmx.com&gt;</a>;
+flourishlib <a class="moz-txt-link-rfc2396E" href="mailto:flourishlib@zoho.com">&lt;flourishlib@zoho.com&gt;</a><br>
+Sent: Wed, Apr 28, 2010 9:39 pm<br>
+Subject: Re: Multiple To and Cc<br>
+  <br>
+  <div id="AOLMsgPart_1_2d20f5ea-2b30-4a98-8bff-6cce206590e4">
+  <span style="font-family: Verdana,Arial,Helvetica,sans-serif;">This
+is a third-level reply</span><br>
+  <br>
+---- On Wed, 28 Apr 2010 18:30:01 -0700 <b>Will Bond &lt;<a
+ moz-do-not-send="true" href="mailto:flourishlib@gmail.com">flourishlib@gmail.com</a>&gt;</b>
+wrote ---- <br>
+  <br>
+  <blockquote
+ style="border-left: 1px solid rgb(0, 0, 255); padding-left: 6px;">This
+is a test of replying to a message<br clear="none">
+    <br clear="none">
+    <div>On Wed, Apr 28, 2010 at 9:28 PM, Will Bond <span dir="ltr">&lt;<a
+ moz-do-not-send="true" shape="rect" href="mailto:will@flourishlib.com">will@flourishlib.com</a>&gt;</span>
+wrote:<br clear="none">
+    <blockquote
+ style="border-left: 1px solid rgb(204, 204, 204); margin: 0pt 0pt 0pt 0.8ex; padding-left: 1ex;">
+This is a test of sending to multiple people, while also CCing another
+few<br clear="none">
+    </blockquote>
+    </div>
+    <br clear="none">
+  </blockquote>
+  <br>
+  </div>
+<!-- end of AOLMsgPart_1_2d20f5ea-2b30-4a98-8bff-6cce206590e4 --></div>
+  </font>
+</blockquote>
+<br>
+</body>
+</html>
+
+--------------070405010504020009070409--
