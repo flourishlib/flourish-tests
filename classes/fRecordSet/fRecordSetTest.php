@@ -11,6 +11,7 @@ class RecordLabel extends fActiveRecord { }
 class FavoriteAlbum extends fActiveRecord { }
 class InvalidTable extends fActiveRecord { }
 class Event extends fActiveRecord { }
+class Category extends fActiveRecord { }
 
 function Album($album_id)
 {
@@ -409,6 +410,41 @@ class fRecordSetTest extends PHPUnit_Framework_TestCase
 				case 4:
 					$expected_count = 0;
 					break;		
+			}
+			$this->assertEquals($expected_count, $count);
+		}
+		fORMDatabase::retrieve()->enableDebugging(FALSE);
+		
+		$output = ob_get_clean();
+		$this->assertEquals('', $output);
+	}
+
+	public function testPrecountSelfJoin()
+	{
+		$set = fRecordSet::build('Category');
+		$set->precountCategories();
+		
+		ob_start();
+		
+		fORMDatabase::retrieve()->enableDebugging(TRUE);
+		foreach ($set as $category) {
+			$count = $category->countCategories();
+			switch ($category->getCategoryId()) {
+				case 1:
+					$expected_count = 3;
+					break;
+				case 2:
+					$expected_count = 0;
+					break;
+				case 3:
+					$expected_count = 0;
+					break;
+				case 4:
+					$expected_count = 0;
+					break;
+				case 5:
+					$expected_count = 0;
+					break;
 			}
 			$this->assertEquals($expected_count, $count);
 		}
