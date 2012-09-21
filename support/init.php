@@ -24,7 +24,15 @@ if (in_include_path('PHPUnit/Autoload.php')) {
 	require_once 'PHPUnit/Framework.php';
 }
 require_once 'PHPUnit/TextUI/TestRunner.php';
-require_once 'PHPUnit/Extensions/OutputTestCase.php';
+// Output test case is no longer available in 3.7
+if (in_include_path('PHPUnit/OutputTestCase.php')) {
+	require_once 'PHPUnit/Extensions/OutputTestCase.php';
+}
+// For some reason these were not loading with 3.7
+if (in_include_path('Symfony/Component/Yaml/Inline.php')) {
+	require_once 'Symfony/Component/Yaml/Inline.php';
+	require_once 'Symfony/Component/Yaml/Escaper.php';
+}
 
 date_default_timezone_set('America/New_York');
 error_reporting(E_ALL | E_STRICT);
