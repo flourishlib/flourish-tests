@@ -463,7 +463,6 @@ for RHOST in $RHOSTS; do
 		show_ext gd         $(present "$PHP_MODULES" gd)         0
 		show_ext iconv      $(present "$PHP_MODULES" iconv)      1
 		show_ext ibm_db2    $(present "$PHP_MODULES" ibm_db2)    0
-		show_ext imap       $(present "$PHP_MODULES" imap)       0
 		show_ext json       $(present "$PHP_MODULES" json)       0
 		show_ext mbstring   $(present "$PHP_MODULES" mbstring)   0
 		show_ext mcrypt     $(present "$PHP_MODULES" mcrypt)     0
