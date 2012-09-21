@@ -344,7 +344,7 @@ while [[ $1 =~ .@ ]]; do
 	((TOTAL_HOSTS++))
 done
 if (( ! $TOTAL_HOSTS )); then
-	RHOSTS="will@vm-centos.wbond.net will@vm-debian.wbond.net will@vm-fedora.wbond.net will@vm-freebsd.wbond.net will@vm-netbsd.wbond.net will@vm-openbsd.wbond.net will@vm-opensolaris.wbond.net will@vm-opensuse.wbond.net will@osx.wbond.net will@vm-server2008.wbond.net will@vm-ubuntu.wbond.net will@vm-xp.wbond.net"
+	RHOSTS="will@vm-arch.wbond.net will@vm-centos.wbond.net will@vm-debian.wbond.net will@vm-fedora.wbond.net will@vm-freebsd.wbond.net will@vm-netbsd.wbond.net will@vm-openbsd.wbond.net will@vm-opensolaris.wbond.net will@vm-opensuse.wbond.net will@osx.wbond.net will@vm-server2008.wbond.net will@vm-ubuntu.wbond.net will@vm-xp.wbond.net"
 	TOTAL_HOSTS=12
 fi
 
