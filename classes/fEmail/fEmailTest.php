@@ -225,8 +225,7 @@ You can replace anything', $message['text']);
 		$email->addRecipient(EMAIL_ADDRESS, 'Test User');
 		$email->setSubject($token . ': This is a test of sending headers and body with UTF-8, such as Iñtërnâtiônàlizætiøn');
 		$email->setBody('This is a test with UTF-8 characters, such as:
-Iñtërnâtiônàlizætiøn
-');
+Iñtërnâtiônàlizætiøn');
 		$message_id = $email->send();
 		
 		$message = $this->findMessage($token);
