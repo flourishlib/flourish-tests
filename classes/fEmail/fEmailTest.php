@@ -233,8 +233,7 @@ Iñtërnâtiônàlizætiøn');
 		$this->assertEquals('will@flourishlib.com', $message['headers']['from']['mailbox'] . '@' . $message['headers']['from']['host']);
 		$this->assertEquals($token . ': This is a test of sending headers and body with UTF-8, such as Iñtërnâtiônàlizætiøn', $message['headers']['subject']);
 		$this->assertEquals('This is a test with UTF-8 characters, such as:
-Iñtërnâtiônàlizætiøn
-', $message['text']);
+Iñtërnâtiônàlizætiøn', $message['text']);
 	}
 	
 	public function testSendAttachment()
