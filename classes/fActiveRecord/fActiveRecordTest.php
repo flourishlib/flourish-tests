@@ -378,7 +378,7 @@ class fActiveRecordTest extends PHPUnit_Framework_TestCase
 	public function testBuildAll()
 	{
 		$this->assertEquals(
-			'built from buildAll'
+			'built from buildAll',
 			User::buildAll()
 		);
 	}
