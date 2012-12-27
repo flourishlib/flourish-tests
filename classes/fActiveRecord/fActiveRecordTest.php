@@ -88,7 +88,10 @@ class fActiveRecordTest extends PHPUnit_Framework_TestCase
 			fORM::mapClassToTable('Album', 'records');
 		}
 		fORM::registerActiveRecordMethod('User', 'hasChanged', 'changed');	
-		fORM::registerActiveRecordStaticMethod('User', 'buildAll', 'build');
+
+		if (fCore::checkVersion('5.3')) {
+			fORM::registerActiveRecordStaticMethod('User', 'buildAll', 'build');
+		}
 	}
 	
 	public function tearDown()
@@ -377,10 +380,12 @@ class fActiveRecordTest extends PHPUnit_Framework_TestCase
 
 	public function testBuildAll()
 	{
-		$this->assertEquals(
-			'built from buildAll',
-			User::buildAll()
-		);
+		if (fCore::checkVersion('5.3')) {
+			$this->assertEquals(
+				'built from buildAll',
+				User::buildAll()
+			);
+		}
 	}
 
 	public function testChanged()
